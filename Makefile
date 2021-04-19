@@ -22,10 +22,10 @@ LIBFT_HDR 	= -I./libft/includes
 LIB_BINARY	= -L./libft -lft
 LIBFT		= libft/libft.a
 
+all: $(NAME1) $(NAME2)
+
 $(LIBFT):
 	@make -C libft re
-
-all: $(LIBFT) $(NAME1) $(NAME2)
 
 %.o: %.c
 	@$(CC) $(CFLAGS) $(HDR) $(LIBFT_HDR) -c $< -o $@

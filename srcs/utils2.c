@@ -3,27 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thomasgrangeon <thomasgrangeon@student.    +#+  +:+       +#+        */
+/*   By: tgrangeo <tgrangeo@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 12:42:34 by tgrangeo          #+#    #+#             */
-/*   Updated: 2021/04/07 11:27:03 by thomasgrang      ###   ########lyon.fr   */
+/*   Updated: 2021/04/06 13:45:03 by tgrangeo         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-int	ft_option(t_struct *s, char **av)
-{
-	s->a = 1;
-	s->c = 0;
-	s->v = 0;
-	if (ft_issame(av[1], "-v"))
-	{
-		s->v = 1;
-		s->a++;
-	}
-	return (0);
-}
 
 static void	ft_while_2(t_struct *s)
 {
@@ -57,24 +44,21 @@ void	ft_init(int ac, char **av, t_struct *s)
 	else if (ac == 2)
 	{
 		arg2(s, av);
-		//dprintf(1, "ac1 = %d | ac =%d\n", s->ac1, ac);
 		s->list_a = malloc(sizeof(int) * s->ac1 - s->a);
 		if (s->list_a == NULL)
-			message_free("Error malloc\n", 1, s);
+			message_free("error\n", 1, s);
 		s->list_b = malloc(sizeof(int) * s->ac1 - s->a);
 		if (s->list_b == NULL)
-			message_free("Error malloc\n", 1, s);
+			message_free("error\n", 1, s);
 	}
 	else
 	{
-		//dprintf(1, "ac =%d\n", ac);
-		ft_option(s, av);
 		s->list_a = malloc(sizeof(int) * (ac - s->a));
 		if (s->list_a == NULL)
-			message_free("Error malloc\n", 1, s);
+			message_free("error\n", 1, s);
 		s->list_b = malloc(sizeof(int) * (ac - s->a));
 		if (s->list_b == NULL)
-			message_free("Error malloc\n", 1, s);
+			message_free("error\n", 1, s);
 	}
 }
 

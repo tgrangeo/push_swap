@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 10:46:27 by tgrangeo          #+#    #+#             */
-/*   Updated: 2021/03/29 09:55:52 by tgrangeo         ###   ########lyon.fr   */
+/*   Updated: 2021/04/06 13:16:58 by tgrangeo         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ int	main(int ac, char **av)
 
 	s.push = 0;
 	if (ac == 1)
+		return (0);
+	if (av[1][0] == 0)
 		return (0);
 	sort_arg(ac, av, &s);
 	while (get_next_line(0, &buf) > 0)

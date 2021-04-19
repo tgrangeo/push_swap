@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_arg.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thomasgrangeon <thomasgrangeon@student.    +#+  +:+       +#+        */
+/*   By: tgrangeo <tgrangeo@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 12:42:24 by tgrangeo          #+#    #+#             */
-/*   Updated: 2021/04/07 11:56:48 by thomasgrang      ###   ########lyon.fr   */
+/*   Updated: 2021/04/19 10:55:23 by tgrangeo         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ static void	arg1(t_struct *s, int ac, char **av)
 	s->a = 1;
 	s->list_a = malloc(sizeof(int) * ac - 1);
 	if (s->list_a == NULL)
-		message_free("Error malloc\n", 1, s);
+		message_free("Error\n", 1, s);
 	s->list_b = malloc(sizeof(int) * ac - 1);
 	if (s->list_b == NULL)
-		message_free("Error malloc\n", 1, s);
+		message_free("Error\n", 1, s);
 	s->size_a = ac - 1;
 	s->max = s->size_a;
 	s->size_b = 0;
@@ -38,21 +38,18 @@ static void	arg1(t_struct *s, int ac, char **av)
 
 static void	ft_count(char *str, t_struct *s)
 {
-	int		i;
+	int	i;
 
 	i = 0;
 	s->ac1 = 0;
-	while (str[i] == ' ' || str[i] == '-' || (str[i] <= '9' && str[i] >= '0'))
-		i++;
-	if (i != ft_strlen(str))
-		message_free("Error\n", 1, s);
-	i = 0;
-	while (str[i] != '\0')
+	if (check_line(str) == 1)
+		message("Error\n", 1);
+	while (str[i])
 	{
 		if (str[i] != ' ')
 		{
 			s->ac1++;
-			while (str[i] != '\0' && str[i] != ' ')
+			while (str[i + 1] != ' ' && str[i])
 				i++;
 		}
 		if (str[i] == '\0')
@@ -60,7 +57,7 @@ static void	ft_count(char *str, t_struct *s)
 		i++;
 	}
 	if (s->ac1 == 1)
-		message_free("", 0, s);
+		message("", 0);
 }
 
 static void	put_arg(char *str, char **av1, t_struct *s)
@@ -93,12 +90,12 @@ static void	put_arg(char *str, char **av1, t_struct *s)
 void	arg2(t_struct *s, char **av)
 {
 	ft_count(av[1], s);
-	s->ac1 += 1;
 	if (s->ac1 == 1 && check_isnum(av, 1, 0))
 		message_free("", 1, s);
 	else if (s->ac1 == 1)
 		message_free("Error\n", 1, s);
 	s->f = 1;
+	s->ac1 += 1;
 	s->a = 1;
 	s->av1 = malloc(sizeof(char *) * s->ac1);
 	if (s->av1 == NULL)

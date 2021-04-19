@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 10:17:31 by tgrangeo          #+#    #+#             */
-/*   Updated: 2021/03/29 11:49:46 by tgrangeo         ###   ########lyon.fr   */
+/*   Updated: 2021/04/06 13:44:09 by tgrangeo         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,22 +38,22 @@ void	create_chunk(t_struct *s)
 	init_n_chunk(s);
 	s->chunk = malloc(sizeof(int *) * s->n_chunk);
 	if (s->chunk == NULL)
-		message_free("Error malloc\n", 1, s);
+		message_free("error\n", 1, s);
 	s->chunk_len = malloc(sizeof(int) * s->n_chunk);
 	if (s->chunk_len == NULL)
-		message_free("Error malloc\n", 1, s);
+		message_free("error\n", 1, s);
 	while (++i < s->n_chunk - 1)
 	{
 		s->chunk[i] = malloc(sizeof(int) * s->size_a
 				/ s->n_chunk - s->moinchunk[i]);
 		if (s->chunk[i] == NULL)
-			message_free("Error malloc\n", 1, s);
+			message_free("error\n", 1, s);
 		s->chunk_len[i] = s->size_a / s->n_chunk - s->moinchunk[i];
 	}
 	s->chunk[i] = malloc(sizeof(int) * (s->size_a
 				/ s->n_chunk + (s->size_a % s->n_chunk) - s->moinchunk[i]));
 	if (s->chunk[i] == NULL)
-		message_free("Error malloc\n", 1, s);
+		message_free("error\n", 1, s);
 	s->chunk_len[i] = s->size_a / s->n_chunk + (s->size_a % s->n_chunk)
 		- s->moinchunk[i];
 	fill(s);

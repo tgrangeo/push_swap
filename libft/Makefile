@@ -21,7 +21,6 @@ all: $(NAME)
 
 %.o: %.c $(HEADER)
 	@gcc $(FLAGS) -c $< -o $@
-	@echo "$@ compiled."
 $(NAME): $(OBJS) $(HEADER)
 	@echo "$(GREEN)libft compiled ...$(NC)"
 	@ar rcs $(NAME) $(OBJS)

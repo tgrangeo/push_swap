@@ -15,7 +15,7 @@ static void	big_list2(t_struct *s, t_node	*p, t_node	*n)
 	s->big_size = p->len;
 	s->big_list = malloc(sizeof(int) * p->len);
 	if (s->big_list == NULL)
-		message_free("Error malloc\n", 1, s);
+		message_free("error\n", 1, s);
 	s->big_list[0] = p->val;
 	i = 1;
 	while (i < s->big_size)
@@ -47,7 +47,7 @@ void	big_list(t_struct *s)
 
 	n = calloc(s->size_a, sizeof(*n));
 	if (n == NULL)
-		message_free("Error malloc\n", 1, s);
+		message_free("error\n", 1, s);
 	i = 0;
 	while (i < s->size_a - 1)
 	{

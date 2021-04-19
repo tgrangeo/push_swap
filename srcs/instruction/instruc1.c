@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   instruc1.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thomasgrangeon <thomasgrangeon@student.    +#+  +:+       +#+        */
+/*   By: tgrangeo <tgrangeo@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 12:43:15 by tgrangeo          #+#    #+#             */
-/*   Updated: 2021/04/07 11:56:30 by thomasgrang      ###   ########lyon.fr   */
+/*   Updated: 2021/04/06 13:37:16 by tgrangeo         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ int	ft_sa(t_struct *p)
 	temp = p->list_a[p->size_a - 1];
 	p->list_a[p->size_a - 1] = p->list_a[p->size_a - 2];
 	p->list_a[p->size_a - 2] = temp;
-	if (p->v && p->push)
-		print(p);
 	return (0);
 }
 
@@ -41,8 +39,6 @@ int	ft_sb(t_struct *p)
 	temp = p->list_b[p->size_b - 1];
 	p->list_b[p->size_b - 1] = p->list_b[p->size_b - 2];
 	p->list_b[p->size_b - 2] = temp;
-	if (p->v && p->push)
-		print(p);
 	return (0);
 }
 
@@ -64,8 +60,6 @@ int	ft_pa(t_struct *p)
 	p->list_a[p->size_a] = p->list_b[p->size_b - 1];
 	p->size_a++;
 	p->size_b--;
-	if (p->v && p->push)
-		print(p);
 	return (0);
 }
 
@@ -78,7 +72,5 @@ int	ft_pb(t_struct *p)
 	p->list_b[p->size_b] = p->list_a[p->size_a - 1];
 	p->size_a--;
 	p->size_b++;
-	if (p->v && p->push)
-		print(p);
 	return (0);
 }

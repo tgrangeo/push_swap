@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 10:53:07 by tgrangeo          #+#    #+#             */
-/*   Updated: 2021/03/29 11:36:24 by tgrangeo         ###   ########lyon.fr   */
+/*   Updated: 2021/04/06 13:44:09 by tgrangeo         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	create_sort_tab(t_struct *s)
 	j = 0;
 	s->sorted = malloc(sizeof(int) * s->size_a);
 	if (s->sorted == NULL)
-		message_free("Error malloc\n", 1, s);
+		message_free("error\n", 1, s);
 	while (++i < s->size_a)
 		s->sorted[i] = s->list_a[i];
 	i = 0;

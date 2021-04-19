@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   instruc2.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thomasgrangeon <thomasgrangeon@student.    +#+  +:+       +#+        */
+/*   By: tgrangeo <tgrangeo@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 12:43:20 by tgrangeo          #+#    #+#             */
-/*   Updated: 2021/04/07 11:56:29 by thomasgrang      ###   ########lyon.fr   */
+/*   Updated: 2021/04/06 13:46:17 by tgrangeo         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ int	ft_ra(t_struct *p)
 		x--;
 	}
 	p->list_a[0] = temp;
-	if (p->v && p->push)
-		print(p);
 	return (0);
 }
 
@@ -51,8 +49,6 @@ int	ft_rb(t_struct *p)
 		x--;
 	}
 	p->list_b[0] = temp;
-	if (p->v && p->push)
-		print(p);
 	return (0);
 }
 
@@ -85,8 +81,6 @@ int	ft_rra(t_struct *p)
 		x++;
 	}
 	p->list_a[p->size_a - 1] = temp;
-	if (p->v && p->push)
-		print(p);
 	return (0);
 }
 
@@ -107,7 +101,5 @@ int	ft_rrb(t_struct *p)
 		x++;
 	}
 	p->list_b[p->size_b - 1] = temp;
-	if (p->v && p->push)
-		print(p);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 10:52:54 by tgrangeo          #+#    #+#             */
-/*   Updated: 2021/03/29 11:36:13 by tgrangeo         ###   ########lyon.fr   */
+/*   Updated: 2021/04/06 13:44:41 by tgrangeo         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,6 @@ typedef struct s_struct
 	int		*list_b;
 	int		size_a;
 	int		size_b;
-	int		v;
-	int		c;
 	int		a;
 	int		max;
 	int		min_pos;
@@ -75,7 +73,6 @@ void	ft_free(t_struct *s);
 int		is_sorted(t_struct *s);
 int		ft_issame(char *a, char *b);
 int		check_isnum(char **t, int ac, int a);
-int		ft_option(t_struct *s, char **av);
 void	ft_while(t_struct *s);
 int		just_biglist(t_struct *s);
 void	print_str_colored(t_struct *s, char *color);
@@ -104,5 +101,7 @@ void	ft_free2(t_struct *s);
 int		find_sorted(t_struct *s, int i);
 int		ft_while_chunk(int x, t_struct *s);
 void	create_sort2(t_struct *s, int i, int j);
+int		check_line(char *str);
+char	*ifzero(char *str);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thomasgrangeon <thomasgrangeon@student.    +#+  +:+       +#+        */
+/*   By: tgrangeo <tgrangeo@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 10:53:50 by tgrangeo          #+#    #+#             */
-/*   Updated: 2021/04/07 11:27:19 by thomasgrang      ###   ########lyon.fr   */
+/*   Updated: 2021/04/19 10:48:03 by tgrangeo         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ void	main2(t_struct *s, int i)
 	s->max = s->size_a;
 	s->size_b = 0;
 	i = s->ac1 - s->a - 1;
-	//dprintf(1, "hi %d\n", s->ac1);
 	if (check_isnum(s->av1, s->ac1, s->a))
 		message_free("Error\n", 1, s);
 	while (s->a < s->ac1)
@@ -126,7 +125,6 @@ int	main(int ac, char **av)
 	i = 0;
 	s.push = 1;
 	s.a = 1;
-	s.v = 0;
 	ft_init(ac, av, &s);
 	if (ac == 2)
 		main2(&s, i);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thomasgrangeon <thomasgrangeon@student.    +#+  +:+       +#+        */
+/*   By: tgrangeo <tgrangeo@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 12:42:41 by tgrangeo          #+#    #+#             */
-/*   Updated: 2021/04/07 11:27:04 by thomasgrang      ###   ########lyon.fr   */
+/*   Updated: 2021/04/06 13:05:35 by tgrangeo         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,15 +78,10 @@ int	check_isnum(char **t, int ac, int a)
 
 	y = a;
 	x = 0;
-	//dprintf(1, " a = %s\n", t[y]);
 	while (y < ac)
 	{
 		if (ft_atoi(t[y]) > INT_MAX || ft_atoi(t[y]) < INT_MIN)
-		{
-
-			
 			return (1);
-		}
 		while (x < ft_strlen(t[y]))
 		{
 			if ((t[y][x] <= '9' && t[y][x] >= '0')
